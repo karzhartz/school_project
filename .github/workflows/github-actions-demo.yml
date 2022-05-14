@@ -26,5 +26,4 @@ jobs:
       - name: Analyze project source
         run: dart analyze
       - run: |
-             flutter test -d windows integration_test/windows_test.dart
              flutter test -d android integration_test/android_test.dart
