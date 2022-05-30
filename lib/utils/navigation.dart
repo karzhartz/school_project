@@ -88,6 +88,9 @@ class NavigationSystem {
       case 1:
         NavigationSystem.navigate("forum");
         break;
+      case 2:
+        NavigationSystem.navigate("repository");
+        break;
       default:
         NavigationSystem.navigate("updates");
     }

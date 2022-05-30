@@ -4,7 +4,9 @@ import "package:get/get.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:school_ui/controllers/notification_controller.dart';
+import 'package:school_ui/controllers/tag_controller.dart';
 import 'package:school_ui/pages/forum_page.dart';
+import 'package:school_ui/pages/repository.dart';
 import 'package:school_ui/pages/updates_page.dart';
 import 'package:school_ui/utils/navigation.dart';
 import "./utils/colors.dart" as appColors;
@@ -14,13 +16,19 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   NavigationSystem.addPages([
+    ///This is i where you add pages
+    ///After adding go to the updates and see an example of how to implement navigation fo sub pages
+    ///for navigation for sub pages, get the page info of the page which includes its pageCOntroller
+    ///for sub navigations
     NavigationPage(name: "updates", page: UpdatesPage()),
     NavigationPage(name: "forum", page: ForumPage()),
-    // NavigationPage(name: "repository", page: Repository()),
+    NavigationPage(name: "repository", page: RepositoryPage()),
   ]);
 
   Get.put(NotificationController());
   Get.put(ForumPostsController());
+  Get.put(TagController());
+
   runApp(const MyApp());
 }
 
