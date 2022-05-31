@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:school_ui/controllers/forum_posts_controller.dart';
 import 'package:school_ui/models/forum_post_model.dart';
+import 'package:school_ui/pages/repository.dart';
 import 'package:school_ui/utils/navigation.dart';
 
 import '../widgets/forum_post_widget.dart';

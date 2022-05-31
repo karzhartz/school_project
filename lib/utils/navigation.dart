@@ -89,7 +89,7 @@ class NavigationSystem {
         NavigationSystem.navigate("forum");
         break;
       default:
-        NavigationSystem.navigate("updates");
+        NavigationSystem.navigate("repository");
     }
     currentBottomNavPageIndex.value = index;
   }

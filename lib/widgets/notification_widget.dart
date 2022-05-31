@@ -49,7 +49,7 @@ class NotificationWidget extends StatelessWidget {
             Text(
               "45min ago",
               style: TextStyle(
-                color: HexColor(appColors.blue3),
+                color: Color.fromARGB(255, 223, 52, 0),
                 fontSize: 11,
               ),
             ),

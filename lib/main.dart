@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:school_ui/controllers/notification_controller.dart';
 import 'package:school_ui/pages/forum_page.dart';
+import 'package:school_ui/pages/repository.dart';
 import 'package:school_ui/pages/updates_page.dart';
 import 'package:school_ui/utils/navigation.dart';
 import "./utils/colors.dart" as appColors;
@@ -16,7 +17,7 @@ void main() {
   NavigationSystem.addPages([
     NavigationPage(name: "updates", page: UpdatesPage()),
     NavigationPage(name: "forum", page: ForumPage()),
-    // NavigationPage(name: "repository", page: Repository()),
+    NavigationPage(name: "repository", page: Repository()),
   ]);
 
   Get.put(NotificationController());
