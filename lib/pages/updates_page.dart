@@ -24,6 +24,7 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
+///Scroll down and look at the init section
 class UpdatesPage extends StatefulHookWidget {
   const UpdatesPage({Key? key}) : super(key: key);
 
@@ -108,6 +109,9 @@ class _UpdatesPageState extends State<UpdatesPage> {
       NavigationSystem.getPageInfo("updates").runScheduledActions();
     });
 
+    ///The functon [NavigationSystem.getPageInfo(pageName)] gets
+    ///the page info of a page and returns it press Ctrl and clik on the
+    ///function to view the page info
     pageController = NavigationSystem.getPageInfo("updates").pageController
         as PageController;
 

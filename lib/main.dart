@@ -3,25 +3,37 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import "package:get/get.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:school_ui/controllers/listofBooks_Controller.dart';
 import 'package:school_ui/controllers/notification_controller.dart';
+import 'package:school_ui/controllers/tag_controller.dart';
 import 'package:school_ui/pages/forum_page.dart';
 import 'package:school_ui/pages/repository.dart';
+import 'package:school_ui/pages/settings.dart';
 import 'package:school_ui/pages/updates_page.dart';
 import 'package:school_ui/utils/navigation.dart';
 import "./utils/colors.dart" as appColors;
 import 'controllers/forum_posts_controller.dart';
+import 'pages/dowloads.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
+  Get.put(NotificationController());
+  Get.put(ForumPostsController());
+  Get.put(TagController());
+  Get.put(BookController());
+
   NavigationSystem.addPages([
+    ///This is i where you add pages
+    ///After adding go to the updates and see an example of how to implement navigation fo sub pages
+    ///for navigation for sub pages, get the page info of the page which includes its pageCOntroller
+    ///for sub navigations
     NavigationPage(name: "updates", page: UpdatesPage()),
     NavigationPage(name: "forum", page: ForumPage()),
     NavigationPage(name: "repository", page: Repository()),
+    NavigationPage(name: "settings", page: Settings()),
   ]);
 
-  Get.put(NotificationController());
-  Get.put(ForumPostsController());
   runApp(const MyApp());
 }
 
@@ -31,12 +43,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MainLayout(),
       ),
-      home: MainLayout(),
     );
   }
 }
